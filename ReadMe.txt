@@ -1,0 +1,6 @@
+1- Add freestyle project
+2- In "Source Code Management" select git and add git repo alongside credentials
+3- In "Build" section select "Execute Shell" option then Add below commands
+echo "executing shell.."
+docker build -t rehanislam/nginx:0.1 .
+docker run -it -d --name nginxcontainer -p 8083:80 rehanislam/nginx:0.1
