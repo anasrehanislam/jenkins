@@ -1,6 +1,6 @@
 node {
-    agent any
-    stages {
+    def app
+    
         stage('Clone repository') {
             /* Cloning the Repository to our Workspace */
 
@@ -30,7 +30,7 @@ node {
                 } 
                     echo "Trying to Push Docker Build to DockerHub"
         }
-    }
+    
 }
 
 
