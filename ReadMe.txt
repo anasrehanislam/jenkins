@@ -12,3 +12,4 @@ CloudBees Docker Build and Publish plugin
 2-Configure project again
 3- In "Build" section select "Docker Build and Publish" option
 4- Add credentials in the "Registry credentials" section
+5. In the "Build Trigger" section check option "GitHub hook trigger for GITScm polling"

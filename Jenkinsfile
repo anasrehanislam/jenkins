@@ -10,7 +10,7 @@ node {
         stage('Build image') {
             /* This builds the actual image */
 
-            app = docker.build("rehanislam/nginx:0.2")
+            app = docker.build("rehanislam/nginx")
         }
 
         stage('Test image') {
@@ -26,7 +26,7 @@ node {
             */
             docker.withRegistry('https://registry.hub.docker.com', 'docker-id') {
                 app.push("${env.BUILD_NUMBER}")
-                app.push("latest")
+                app.push("0.2")
                 } 
                     echo "Trying to Push Docker Build to DockerHub"
         }
