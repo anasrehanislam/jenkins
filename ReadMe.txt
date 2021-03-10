@@ -1,3 +1,5 @@
+Note: If in minikube jenkins not working give permisions to /data/jenkins
+
 Add Freestyle Project:
 1- Add freestyle project
 2- In "Source Code Management" select git and add git repo alongside credentials
@@ -6,6 +8,11 @@ echo "executing shell.."
 docker build -t rehanislam/nginx:0.1 .
 docker run -it -d --name nginxcontainer -p 8083:80 rehanislam/nginx:0.1
 
+Add webhook:
+Install ngrok
+$ sudo snap install ngrok
+Expose jenkins to the internet
+$ ngrok http -host-header=localhost 8083
 
 To push Image on dockerhub
 1- Inside jenkins container login to docker "docker login"
