@@ -1,6 +1,6 @@
 Note: If in minikube jenkins not working give permisions to /data/jenkins
 
-Add Freestyle Project:
+Freestyle Project Execute Shell:
 1- Add freestyle project
 2- In "Source Code Management" select git and add git repo alongside credentials
 3- In "Build" section select "Execute Shell" option then Add below commands
@@ -18,13 +18,16 @@ Set payload url http://bdd3bf8b8847.ngrok.io/github-webhook/
 Select "just the push event"
 Configure Jenkins project and select "GitHub hook trigger for GITScm polling" in "Build Triggers" section
 
-To push Image on dockerhub
-1- Inside jenkins container login to docker "docker login"
-1- Install plugin "CloudBees Docker Build and Publish" plugin
-2- Configure project again
-3- In "Build" section select "Docker Build and Publish" option
-4- Add credentials in the "Registry credentials" section
-5. In the "Build Trigger" section check option "GitHub hook trigger for GITScm polling"
+Freestyle Project push dockerhub
+1- Add freestyle project
+2- In "Source Code Management" select git and add git repo alongside credentials
+3- Inside jenkins container login to docker "docker login"
+4- Install plugin "CloudBees Docker Build and Publish" plugin
+5- Configure project again
+6- In "Build" section select "Docker Build and Publish" option
+7- Add credentials in the "Registry credentials" section
+8- Add webhook again to build on push event
+9. Go to "Build Trigger" section select option "GitHub hook trigger for GITScm polling"
 
 Add pipeline Project:
 1- Install "Docker Pipline" plugin
