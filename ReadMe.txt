@@ -12,7 +12,11 @@ Add webhook:
 Install ngrok
 $ sudo snap install ngrok
 Expose jenkins to the internet
-$ ngrok http -host-header=localhost 8083
+$ ngrok http -host-header=localhost 8080 #Jenkins local URL
+Add webhook on github
+Set payload url http://bdd3bf8b8847.ngrok.io/github-webhook/
+Select "just the push event"
+Configure Jenkins project and select "GitHub hook trigger for GITScm polling" in "Build Triggers" section
 
 To push Image on dockerhub
 1- Inside jenkins container login to docker "docker login"
