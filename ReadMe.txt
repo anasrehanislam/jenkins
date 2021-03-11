@@ -8,7 +8,7 @@ echo "executing shell.."
 docker build -t rehanislam/nginx:0.1 .
 docker run -it -d --name nginxcontainer -p 8083:80 rehanislam/nginx:0.1
 
-Add webhook:
+Add Webhook:
 Install ngrok
 $ sudo snap install ngrok
 Expose jenkins to the internet
@@ -18,7 +18,7 @@ Set payload url http://bdd3bf8b8847.ngrok.io/github-webhook/
 Select "just the push event"
 Configure Jenkins project and select "GitHub hook trigger for GITScm polling" in "Build Triggers" section
 
-Freestyle Project push dockerhub
+Freestyle Project Push Dockerhub
 1- Add freestyle project
 2- In "Source Code Management" select git and add git repo alongside credentials
 3- Inside jenkins container login to docker "docker login"
@@ -29,9 +29,9 @@ Freestyle Project push dockerhub
 8- Add webhook again to build on push event
 9. Go to "Build Trigger" section select option "GitHub hook trigger for GITScm polling"
 
-Add pipeline Project:
+Pipeline Project:
 1- Install "Docker Pipline" plugin
-1- In "pipeline" section select "Git" option
+1- In "pipeline" section selectn 'Pipeline script from scm' and then in the SCM select "Git" option
 2- Add Repository URL:https://github.com/anasrehanislam/jenkins.git and credentials
 3- In "Script Path" add Jenkinsfile path.
 4- Save and build
